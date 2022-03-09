@@ -1,0 +1,90 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00aaff, #00ff6c);
+    flex-flow: flex column;
+}
+
+.colunas{
+    display: flex;
+}
+
+.calculadora-style{
+    margin-left: 200px;
+}
+
+.grid-calculadora{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.grid-calculadora > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid black;
+    outline: none;
+    background-color: rgba(255,255,255,.75);
+}
+
+.grid-calculadora > button:hover {
+    background-color: rgba(255,255,255,.9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* operador anterior */
+.output .operador-ant{
+    color: rgba(255,255,255,.75);
+    font-size: 1.5rem;
+}
+
+/* operador atual */
+.output .operador-atual{
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+.output-historico{
+    background-color: rgba(0, 0, 0, .75);
+    color: white;
+    align-items: center;
+    padding: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-height: 100vh;
+    max-width: 300px;
+    min-width: 300px;
+    margin-left: 200px;
+    overflow: auto;
+}
+
+.historico{
+   font-size: 1.2rem;
+   list-style: square;
+   padding: 1rem;
+}
